@@ -579,10 +579,10 @@ Module/Unit/Component testing
           /    \
          /      \
 		/ E2E/UI \
-	   /----------\
-	  /            \
-	 /  Integration \
-	/----------------\
+       /          \
+      /            \
+     /  Integration \
+	/                \
    /                  \
   /        Unit        \
  /----------------------\ 

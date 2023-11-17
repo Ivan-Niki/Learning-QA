@@ -874,3 +874,31 @@ Content-Type: multipart/form-data; boundary=something
 --> Заголовок Content-length
 Этот заголовок содержит строку, в которой записана длина передаваемых данных в байтах при использовании метода передачи POST.
 Если задействуется метод GET, то этот заголовок отсутствует.
+
+
+
+
+При отправке формы мы отправляем какие-то данные. Так как в HTTP не предусмотрены специальные места для отправки данных из форм, они отправляются в теле запроса. При этом в зависимости от того, какой заголовок Content-Type установлен, интерпретируется то, как будут закодированы данные при отправке. Обычно используется следующий формат Content-Type: application/x-www-form-urlencoded. Это простой формат — ключ равно значение и амперсанд между ними.
+
+login=smith&password=12345678
+Таким нехитрым способом мы можем продолжать строку, передавая столько данных, сколько захотим. Теперь попробуем сделать запрос к нашему локальному серверу.
+
+telnet localhost 8080
+
+POST /login HTTP/1.1
+Host: hexlettesthost.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+
+login=smith&password=12345678 # отправляем данные
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 7
+ETag: W/"c-r0WEeVxJ7IpMIG20rN7HX9ndB4c"
+Date: Thu, 09 Jul 2020 03:32:54 GMT
+
+Done!
+Connection closed by foreign host.
+

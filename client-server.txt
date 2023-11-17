@@ -870,3 +870,7 @@ Cache-Control: max-age=3600, public
 Content-Type: text/html; charset=utf-8
 Content-Type: multipart/form-data; boundary=something
 
+
+--> Заголовок Content-length
+Этот заголовок содержит строку, в которой записана длина передаваемых данных в байтах при использовании метода передачи POST.
+Если задействуется метод GET, то этот заголовок отсутствует.

@@ -1103,3 +1103,10 @@ Upgrade: websocket
 Sec-WebSocket-Version: 13
 Sec-WebSocket-Key: b6gjhT32u488lpuRwKaOWs==
 
+
+----- Ответ -----
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: rG8wsswmHTJ85lJgAE3M5RTmcCE=
+

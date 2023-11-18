@@ -1090,3 +1090,16 @@ WebSocket — это еще один протокол для отправки и
 
 Ожидается, что при использовании этой схемы серверы и клиенты будут следовать стандартному протоколу подключения WebSocket. Установка соединения веб-сокетов начинается с обновления HTTP-запроса, который содержит пару заголовков, таких как Connection: Upgrade, Upgrade: WebSocket, Sec-WebSocket-Key.
 
+----- Запрос -----
+Заголовок Upgrade в коде запроса ниже означает рукопожатие WebSocket, в то время как Sec-WebSocket-Key содержит случайное значение с использованием кодировки Base64. Это значение произвольно генерируется во время каждого рукопожатия WebSocket. Кроме того, заголовок ключа также является частью этого запроса.
+
+Перечисленные выше заголовки образуют GET-запрос:
+GET ws://websocketexample.com:8181/ HTTP/1.1
+Host: localhost:8181
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Key: b6gjhT32u488lpuRwKaOWs==
+
